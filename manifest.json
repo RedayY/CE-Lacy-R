@@ -1,0 +1,39 @@
+//Chrome Extension Manifest file
+//@RedayNBG
+
+{
+//chrome
+"manifest_version" : 2,
+
+//Proj Descr
+"name" : "CE-Lacy-R",
+"description" : "Experimental Chrome Extension Lacy-R",
+"version" : "0.0.1",
+
+//setup visual config
+"browser_action" : {
+    "default_icon" : "src/images/R.png",
+    "default_popup": "popup.html", // <-- page that opens on startup might rename info.html
+    "default_title": "Open CE-Lacy-R"
+},
+
+//Security config
+"permissions" : [
+    "activeTab" ,
+    "https://ajax.googleapis.com/",
+    "tabs",
+    "<all_urls>"
+ ],
+
+ "content_scripts": [
+
+   {
+     "matches": ["<all_urls>"],
+     "js": ["src/scripts/chrome_run.js"],
+     "run_at": "document_start",
+     "all_frames": true
+   }
+
+ ]
+
+}

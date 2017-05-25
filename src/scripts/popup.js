@@ -50,7 +50,7 @@ function overlay_output() {
 
 
 
-//Now lets try this with Chrome API....doesn't work need halp
+//Now lets try this with Chrome API..
 
 
 $(function(){

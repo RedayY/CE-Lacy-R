@@ -9,6 +9,7 @@
 "name" : "CE-Lacy-R",
 "description" : "Experimental Chrome Extension Lacy-R",
 "version" : "0.0.1",
+"options_page" : "tests.html",
 
 //setup visual config
 "browser_action" : {

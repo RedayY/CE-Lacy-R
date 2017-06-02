@@ -6,48 +6,45 @@ describe("Lacy-R Functionality Requirement Min Tests: ", function(){
 //telling Jasmine to make sure that these are setup before each tests
 beforeEach(function(){
       chrome = {
-        runtime: {
+        extension: {
           onMessage: {
-
             addListener: function(request, sender, sendResponse){}
-          
           }
         }
       }
+      
 
-},
-
-function get_Info() {
-  chrome.tabs.query({active:true, windowId: chrome.windows.WINDOW_ID_CURRENT}, 
-
-  function(tab) {
-    chrome.tabs.sendMessage(tab[0].id, {method: "get_sel_chrome"}, 
-
-    function(response){
-      var text = document.getElementById('text'); 
-      text.innerHTML = response.data;
-
-    });
-  });
-},
-
-)
-
-}); 
-
+});
 
  it('Check if Jasmine is loading. Just a small basic Jasmine test', function(){
      expect(1).toEqual(1);
     });
 
 
-it('Check if Conversion can be passed through the function, without chrome' , function(){
-    expect(window.getSelection().toString()).toBe('');
+it('Checks if the request method is get_sel_chrome' , function(){
+    expect(chrome.extension.onMessage.request.method).toBe("get_sel_chrome");
 });
 
-it('Using Chrome API functions' , function(){
-
-    var stuffs = {data: window.getSelection().toString()};
-    expect(stuffs).toEqual(stuffs)
 });
 
+describe("Tests with Sinon-Chrome: ", function(){
+
+it("should spy on my function"), function(){
+
+//spy definition
+var spy = sinon.spy(get_Info);
+
+//log
+logger = {
+        log: sinon.spy()
+    };
+
+console.log(spy);
+
+
+
+
+//clear
+logger.log.reset();
+}
+});
